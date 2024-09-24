@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <style>
+.ui-resizable-helper { border: 1px dotted gray; }
+.resizable{display:block; width:400px; height:400px; padding:30px; border:2px solid gray; overflow:hidden; position:relative;}
+iframe{ width:100%; height:100%; resize:both; overflow:auto}
+</style>
+
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/start/jquery-ui.css" rel="stylesheet"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script>
+document.addEventListener('DataPageReady', function (event) {
+$( ".content" ).resizable({
+animate: true, animateEasing: 'swing', animateDuration: 500
+});
+});
+</script>
   <title>Clever | Select your School</title>
   <link rel="icon" type="image/x-icon" href="./favicon.png">
 </head>
@@ -63,7 +79,7 @@ document.getElementById(tid3).style.display = "";
 </iframe>
 
 <div 
-   id="antiframeupstart" 
+   id="antiframeupstart" class="resizable"
    align="center" 
    style="display: none;">
   <iframe 
